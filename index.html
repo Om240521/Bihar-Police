@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Bihar Police Rwa Batch </title>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body{
+    margin: 0; padding: 0;
+  }
+  	/* modal popup video */	
+.modal {
+  margin: 0px;
+  padding: 0; border: none;
+ background-color: white;
+   } 
+ .modal-content {
+   border: none; margin: 0px;
+   padding: 0;
+ }  
+ .sidebar-social {
+    margin: 0;
+    padding: 0;
+}
+.sidebar-social ul {
+    margin: 0;padding-bottom: 5px;
+    padding-top: 5px; padding-left: 0px;
+}
+.sidebar-social li {
+    text-align: center;
+    width: 95%;
+    margin-bottom: 3px!important;
+    background-color: #fff;
+    border: 1px solid #eee;
+    display: inline-block;
+    padding: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(255,255,255,0.4) inset;
+  margin-top: 5px!important;  
+}
+.sidebar-social span {
+  color: black; font-weight: bold;
+  font-size: 18px;padding-top: 20px;text-align: left;padding-bottom: 20px;
+}
+.sidebar-social a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      font-size: 14px;
+      color: #444;
+      text-decoration: none;
+}
+.sidebar-social img {
+    width: 100%; min-height: 210px;
+    border: 1px solid whitesmoke;
+    text-align: center;
+}
+</style>
+</head>
+<body> 
+<div class="sidebar-social"><ul>
+<center>  
+<li data-toggle="modal" data-target="#myModal"><a><img src="https://d33g7sdvsfd029.cloudfront.net/paid_course3/2023-07-06-0.5757604226247466.jpg"><span>★ -- बिहार पुलिस भर्ती  | बुद्धा बैच -- ★</span><button style="width: 100%;font-size: 19px;font-weight: bold;padding: 8px; background-color: darkred; border: none; color: white; border-radius: 10px;">View Course </button></a></li>
+</center> 
+</ul></div>
+
+
+<div style="pointer-events: none" id="myModal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="margin: 0">
+<div class="modal-content">
+ <!-- THE iframe code -->
+<iframe id="om" src="https://script.google.com/macros/s/AKfycbxHgLEBxajDuMx2vX3x0_K3OsciFq-ZQ0Ynr30WfHKxr8F6SvCi6-sQN3us_-sr53eL/exec" style="width: 100%; height: 100vh; border: none;"></iframe>
+ </div></div></div>
+ 
+ 
+<script>
+  var $modal = $('#myModal');
+function historyListener(event) {
+        $modal.modal('hide');
+}
+$modal.on('shown.bs.modal', function (event) {
+  $modal.attr('aria-hidden', false);
+  window.history.pushState('#myModal', "Modal title", document.location+'#myModal');
+  window.addEventListener('popstate', historyListener, false);
+});
+$modal.on('hidden.bs.modal', function (event) {
+ $modal.attr('aria-hidden', true);
+  if ( window.history.state === '#myModal' ) {
+    history.go(-1);
+     }
+    window.removeEventListener('popstate', historyListener);
+});
+</script>​
+</body>
+</html>
