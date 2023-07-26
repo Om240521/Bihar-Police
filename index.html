@@ -1,10 +1,6 @@
 <html>
 <head>
 <title>Bihar Police Rwa Batch </title>  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body{
@@ -12,14 +8,27 @@
   }
   	/* modal popup video */	
 .modal {
-  margin: 0px;
-  padding: 0; border: none;
- background-color: white;
-   } 
- .modal-content {
-   border: none; margin: 0px;
-   padding: 0;
- }  
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background: ghostwhite;
+  transition: all .4s;
+}
+ .modal:target {
+  visibility: visible;
+  opacity: 1; 
+}
+.modal__content {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}  	
  .sidebar-social {
     margin: 0;
     padding: 0;
@@ -30,7 +39,7 @@
 }
 .sidebar-social li {
     text-align: center;
-    width: 95%;
+    width: 90%;
     margin-bottom: 3px!important;
     background-color: #fff;
     border: 1px solid #eee;
@@ -42,7 +51,7 @@
 }
 .sidebar-social span {
   color: black; font-weight: bold;
-  font-size: 18px;padding-top: 20px;text-align: left;padding-bottom: 20px;
+  font-size: 18px;padding-top: 10px;text-align: left;padding-bottom: 10px;
 }
 .sidebar-social a {
       display: flex;
@@ -55,7 +64,7 @@
       text-decoration: none;
 }
 .sidebar-social img {
-    width: 100%; min-height: 190px;
+    width: 100%; min-height: 170px;
     border: 1px solid whitesmoke;
     text-align: center;
 }
@@ -64,36 +73,18 @@
 <body> 
 <div class="sidebar-social"><ul>
 <center>  
-<li data-toggle="modal" data-target="#myModal"><a><img src="https://d33g7sdvsfd029.cloudfront.net/paid_course3/2023-07-06-0.5757604226247466.jpg"><span>★ -- बिहार पुलिस भर्ती  | बुद्धा बैच -- ★</span><button style="width: 100%;font-size: 19px;font-weight: bold;padding: 8px; background-color: darkred; border: none; color: white; border-radius: 10px;">View Course </button></a></li>
+<li><a href="#demo-modal"><img src="/2Biharpolice.jpg"><span> बिहार पुलिस भर्ती  | बुद्धा बैच <!-- Bihar Police Batch--></span><button style="width: 100%;font-size: 19px;font-weight: bold;padding: 6px; background-color: darkred; border: none; color: white; border-radius: 10px;font-family: times">View Course </button></a></li>
+
 </center> 
 </ul></div>
 
 
-<div style="pointer-events: none" id="myModal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog" style="margin: 0">
-<div class="modal-content">
+<div id="demo-modal" class="modal">
+  <div id='dialog' class="modal__content">
  <!-- THE iframe code -->
-<iframe id="om" src="https://script.google.com/macros/s/AKfycbxHgLEBxajDuMx2vX3x0_K3OsciFq-ZQ0Ynr30WfHKxr8F6SvCi6-sQN3us_-sr53eL/exec" style="width: 100%; height: 100vh; border: none;"></iframe>
- </div></div></div>
+<iframe src="https://script.google.com/macros/s/AKfycbxHgLEBxajDuMx2vX3x0_K3OsciFq-ZQ0Ynr30WfHKxr8F6SvCi6-sQN3us_-sr53eL/exec" style="width: 100%; height: 100%; border: none;"></iframe>
+ </div></div>
  
  
-<script>
-  var $modal = $('#myModal');
-function historyListener(event) {
-        $modal.modal('hide');
-}
-$modal.on('shown.bs.modal', function (event) {
-  $modal.attr('aria-hidden', false);
-  window.history.pushState('#myModal', "Modal title", document.location+'#myModal');
-  window.addEventListener('popstate', historyListener, false);
-});
-$modal.on('hidden.bs.modal', function (event) {
- $modal.attr('aria-hidden', true);
-  if ( window.history.state === '#myModal' ) {
-    history.go(-1);
-     }
-    window.removeEventListener('popstate', historyListener);
-});
-</script>​
 </body>
 </html>
